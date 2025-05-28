@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CrowPlay™ Gift Card Redemption</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            color: #202124;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            border: 1px solid #ccc;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 80%;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4285F4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 30px;
+            font-size: 18px;
+            white-space: pre-wrap;
+        }
+        img {
+            margin-top: 40px;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CrowPlay™ Gift Card Redemption Portal</h1>
+        <p>Enter your gift card code below:</p>
+        <input type="text" id="codeInput" placeholder="e.g. XXXX-XXXX-XXXX-XXXX">
+        <br>
+        <button onclick="redeem()">REDEEM</button>
+        <div class="result" id="resultText"></div>
+        <img src="crow_hero_pixel_art.png" alt="Crow Hero Pixel Art">
+    </div>
+
+    <script>
+        function redeem() {
+            const code = document.getElementById("codeInput").value.trim();
+            const result = document.getElementById("resultText");
+            if (code === "CROW-HERO-404-LV40") {
+                result.innerText = `✅ Code verified: Lv.40 Crow Hero activated.\n💰 £88.00 dispatched via CatTransfer™.\n📦 Quest unlocked:\n   - Watch The Office 100 Times Without Losing Sanity\n   - Build Perfect Nest+++\n   - Survive Japan & Catch a Duck\n📞 Support not available. This cat hates calls.`;
+            } else {
+                result.innerText = "❌ Invalid Code\nWhy are you redeeming it! !! 👨🏽‍💻";
+            }
+        }
+    </script>
+</body>
+</html>
