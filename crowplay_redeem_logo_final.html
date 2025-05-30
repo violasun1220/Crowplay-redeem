@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CrowPlay™ Gift Card Redemption</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            color: #202124;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            border: 1px solid #ccc;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 80%;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4285F4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 30px;
+            font-size: 18px;
+            white-space: pre-wrap;
+        }
+        .gallery img {
+            margin: 10px;
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .logo {
+            max-width: 300px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="89C7386A-ADC3-4EC7-BEF8-6F1B6BA928E4.png" alt="Crowgle Logo" class="logo">
+        <h1>CrowPlay™ Gift Card Redemption Portal</h1>
+        <p>Enter your gift card code below:</p>
+        <input type="text" id="codeInput" placeholder="e.g. XXXX-XXXX-XXXX-XXXX">
+        <br>
+        <button onclick="redeem()">REDEEM</button>
+        <div class="result" id="resultText"></div>
+        <div class="gallery" id="imageGallery" style="display: none;">
+            <img src="F7260596-2519-4004-8CB2-7588569936EF.png" alt="Mushroom Hero">
+            <img src="2F65D1E5-9C2C-4AFF-920E-7F068DDBEDF3.png" alt="Crow Hero">
+            <img src="B03DFA26-D309-444D-B337-DC8531E8A837.png" alt="Duck Hero">
+        </div>
+        <audio id="errorSound">
+            <source src="why-did-you-redeem-it-made-with-Voicemod.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <script>
+        function redeem() {
+            const code = document.getElementById("codeInput").value.trim();
+            const result = document.getElementById("resultText");
+            const gallery = document.getElementById("imageGallery");
+            const audio = document.getElementById("errorSound");
+
+            if (code === "CROW-HERO-404-LV40") {
+                result.innerText = `✅ Code verified: Lv.40 Crow Hero activated.\n💰 £88.00 dispatched via CatTransfer™.\n📦 Quest unlocked:\n   - Watch The Office 100 Times Without Losing Sanity\n   - Build Perfect Nest+++\n   - Survive Japan & Catch a Duck\n📞 Support not available. This cat hates calls.`;
+                gallery.style.display = "block";
+            } else {
+                result.innerText = "❌ Invalid Code\nWhy are you redeeming it! !! 👨🏽‍💻";
+                gallery.style.display = "none";
+                audio.play();
+            }
+        }
+    </script>
+</body>
+</html>
